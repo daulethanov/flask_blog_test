@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Posts</h1>
+{% for post in pages.items %}
+
+<a href="{{url_for('posts.post_detail' ,slug=post.slug)}}">
+  {{post.title}}
+</a>
+    {{post.body}}
+{% endfor %}
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#"><</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">></a></li>
+  </ul>
+</nav>
+{% endblock content %}

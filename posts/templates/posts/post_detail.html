@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Posts</h1>
+
+    {{post.title}}
+        {% for tag in tags %}
+      <button type="button" class="btn btn-warning"><a href="{{url_for('posts.tag_detail', slug=tag.slug)}}">{{tag.name}}</a></button>
+        {% endfor %}
+
+{% endblock %}
